@@ -1,5 +1,6 @@
 import { Inter } from 'next/font/google';
 
+import { Navbar } from '~/components';
 import { SmoothScrollProvider } from '~/providers';
 import '~/styles/globals.css';
 
@@ -22,7 +23,10 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <body className={`font-sans ${inter.variable}`}>
-        <SmoothScrollProvider>{children}</SmoothScrollProvider>
+        <SmoothScrollProvider>
+          <Navbar />
+          {children}
+        </SmoothScrollProvider>
       </body>
     </html>
   );

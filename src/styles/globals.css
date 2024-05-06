@@ -115,3 +115,17 @@
     rgba(171, 171, 171, 0) 100%
   );
 }
+
+.leadership-cover {
+  @apply rounded-[20px] bg-[rgba(46,45,68,0.12)] opacity-100 shadow-[inset_0px_0px_8px_0.82px_var(--token-2cb86bfa-13f7-4b05-9e4b-62158d9723cd,rgba(255,255,255,0.12))] backdrop-blur-[32px];
+  --border-bottom-width: 0.24px;
+  --border-color: var(
+    --token-522d2395-bb39-4d2a-a99c-6bf976a51832,
+    rgba(255, 255, 255, 0.08)
+  );
+  --token-2cb86bfa-13f7-4b05-9e4b-62158d9723cd: rgba(255, 255, 255, 0.08);
+  --border-left-width: 0.24px;
+  --border-right-width: 0.24px;
+  --border-style: solid;
+  --border-top-width: 0.24px;
+}

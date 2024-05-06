@@ -1,9 +1,11 @@
 import React from 'react';
 
+import { Leadership } from '~/sections';
+
 const TeamPage = () => {
   return (
-    <div className='mx-auto max-w-screen-xl text-center text-4xl'>
-      Team Page
+    <div className=' pt-24'>
+      <Leadership />
     </div>
   );
 };

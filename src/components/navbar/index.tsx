@@ -2,17 +2,14 @@
 
 import React from 'react';
 
-import Image from 'next/image';
-import Link from 'next/link';
+import { usePathname, useRouter } from 'next/navigation';
 
+import { useScrollbar } from '@14islands/r3f-scroll-rig';
 import { AnimatePresence, type Variants, motion } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 
-import StripsBackground from '~/assets/strips.svg';
-
 import Logo from '../Logo';
 import { Button } from '../ui/button';
-import Lights from './Lights';
 
 const navLinks = [
   {
@@ -21,7 +18,7 @@ const navLinks = [
   },
   {
     label: 'About',
-    href: '/about',
+    href: '#about',
   },
   {
     label: 'Events',
@@ -39,6 +36,9 @@ const navLinks = [
 ];
 
 const Navbar = () => {
+  const { scrollTo } = useScrollbar();
+  const pathname = usePathname();
+  const router = useRouter();
   const [isOpen, setIsOpen] = React.useState<boolean>(false);
 
   const navItemVariants: Variants = {
@@ -57,19 +57,24 @@ const Navbar = () => {
     },
   };
 
+  const onClick = (link: (typeof navLinks)[number]) => {
+    if (link.href === '/' && pathname === '/') {
+      scrollTo('#hero');
+      return;
+    }
+    if (link.href.startsWith('#')) {
+      if (pathname !== '/') {
+        router.push('/');
+      }
+      scrollTo(link.href);
+    } else {
+      router.push(link.href);
+    }
+    setIsOpen(false);
+  };
+
   return (
     <div className='fixed top-0 z-[2] w-full px-2 pt-5'>
-      <div className='absolute left-1/2 top-0 mx-auto w-full max-w-screen-lg -translate-x-1/2'>
-        <Image
-          src={StripsBackground as unknown as string}
-          alt='StripsBackground'
-          className='h-full w-full object-cover'
-        />
-        <div className='absolute right-1/2 top-0 w-full max-w-screen-lg translate-x-1/2'>
-          <Lights />
-        </div>
-      </div>
-
       <motion.div
         layout='size'
         layoutId='navbar'
@@ -83,16 +88,18 @@ const Navbar = () => {
           <div className='hidden w-full max-w-sm flex-row items-center gap-4 md:flex'>
             {navLinks.map((link) => (
               <Button
-                asChild
                 key={link.label}
                 variant='nav'
                 className='transition-all ease-in'
+                onClick={() => onClick(link)}
               >
-                <Link href={link.href}>{link.label}</Link>
+                {link.label}
               </Button>
             ))}
           </div>
-          <div className='hidden sm:flex'>Get Started</div>
+          <Button variant='primary' className='hidden sm:flex'>
+            Get Started
+          </Button>
           <Button
             size='icon'
             variant='link'
@@ -130,14 +137,11 @@ const Navbar = () => {
                   }}
                 >
                   <Button
-                    asChild
                     variant='nav'
                     className='w-full transition-all ease-in'
-                    onClick={() => {
-                      setIsOpen(false);
-                    }}
+                    onClick={() => onClick(link)}
                   >
-                    <Link href={link.href}>{link.label}</Link>
+                    {link.label}
                   </Button>
                 </motion.div>
               ))}

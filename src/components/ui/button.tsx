@@ -20,6 +20,7 @@ const buttonVariants = cva(
         ghost: 'hover:bg-accent hover:text-accent-foreground',
         link: 'text-primary underline-offset-4 hover:underline',
         nav: 'text-base text-[#cbcbe8bf] border-[#151633] hover:border-border hover:bg-[#cacae80a] border-opacity-0 hover:border-opacity-100',
+        primary: 'text-base radial-btn radial-btn-bg cursor-pointer',
       },
       size: {
         default: 'h-10 px-4 py-2',

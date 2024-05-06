@@ -22,7 +22,7 @@ interface Props extends MotionProps {
   };
 }
 
-export const ValueCard = ({
+export const AboutCard = ({
   title,
   description,
   imgCls,
@@ -59,7 +59,7 @@ export const ValueCard = ({
         once: true,
       }}
       className={cn(
-        'relative flex h-[18rem] flex-col overflow-hidden rounded-3xl border border-[#312B4C] p-5',
+        'relative flex h-[18rem] flex-col overflow-hidden rounded-3xl border border-[#312B4C] bg-background p-5',
         className
       )}
       {...props}
@@ -73,7 +73,6 @@ export const ValueCard = ({
       />
       <div className='z-[6] flex h-full flex-col justify-around gap-3'>
         {number && <Image src={number} className='h-12 w-12' alt='number' />}
-
         <div className='flex flex-col gap-4'>
           <h3 className='text-2xl font-semibold text-white'>{title}</h3>
           <p className='max-w-xs text-sm'>{description}</p>
@@ -83,7 +82,7 @@ export const ValueCard = ({
   );
 };
 
-export const ValueCardLarge = ({
+export const AboutCardLarge = ({
   title,
   className,
   initial,

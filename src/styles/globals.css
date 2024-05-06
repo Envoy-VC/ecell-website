@@ -95,3 +95,23 @@
     rgba(5, 4, 31, 0) 100%
   );
 }
+
+.radial-btn {
+  @apply rounded-[96px] bg-[rgba(5,4,31,0.08)] opacity-100 shadow-[rgba(255,255,255,0.16)_0px_0px_8px_0.82px_inset] backdrop-blur-xl;
+}
+
+.radial-btn-bg {
+  background: radial-gradient(
+    100% 100% at 50% 100%,
+    rgba(255, 255, 255, 0.04) 0%,
+    rgba(171, 171, 171, 0) 100%
+  );
+}
+
+.radial-btn-bg:hover {
+  background: radial-gradient(
+    100% 100% at 50% 100%,
+    rgba(255, 255, 255, 0.12) 0%,
+    rgba(171, 171, 171, 0) 100%
+  );
+}

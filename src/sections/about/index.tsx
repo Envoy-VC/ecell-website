@@ -5,13 +5,16 @@ import One from '~/assets/one.svg';
 import Three from '~/assets/three.svg';
 import Two from '~/assets/two.svg';
 
-import { ValueCard, ValueCardLarge } from './ValueCard';
+import { AboutCard, AboutCardLarge } from './AboutCard';
 
-const Values = () => {
+const About = () => {
   return (
-    <section className='flex h-full min-h-screen flex-col items-center justify-center gap-12 py-12'>
+    <section
+      className='z-[10] flex h-full min-h-screen flex-col items-center justify-center gap-12 py-12'
+      id='about'
+    >
       <div className='flex flex-col gap-2 py-6 text-center'>
-        <h2 className='title-gradient text-[2rem] font-semibold leading-[1.3] sm:text-5xl md:text-6xl'>
+        <h2 className='title-gradient z-[2] text-[2rem] font-semibold leading-[1.3] sm:text-5xl md:text-6xl'>
           Launch with{' '}
           <span
             className='bg-cover bg-clip-text bg-center bg-no-repeat text-transparent'
@@ -28,9 +31,9 @@ const Values = () => {
           startup with the E-Cell.
         </p>
       </div>
-      <div className='flex w-full max-w-screen-xl flex-col gap-4 lg:flex-row'>
+      <div className='flex w-full max-w-screen-xl flex-col gap-4 bg-background lg:flex-row'>
         <div className='flex basis-1/3 flex-col gap-5'>
-          <ValueCard
+          <AboutCard
             imgCls='right-0 top-0 rotate-[89deg] -translate-y-1/2 translate-x-2/3'
             title='Dedicated Customer Support'
             description={`Superior product quality refers to the exceptional standard of a product's design, performance, and durability, surpassing the expectations and satisfaction of customers.`}
@@ -40,7 +43,7 @@ const Values = () => {
               y: -30,
             }}
           />
-          <ValueCard
+          <AboutCard
             imgCls='hidden'
             title='Dedicated Customer Support'
             description={`Superior product quality refers to the exceptional standard of a product's design, performance, and durability, surpassing the expectations and satisfaction of customers.`}
@@ -51,7 +54,7 @@ const Values = () => {
             }}
           />
         </div>
-        <ValueCardLarge
+        <AboutCardLarge
           imgCls='hidden'
           title='Dedicated Customer Support'
           initial={{
@@ -60,7 +63,7 @@ const Values = () => {
           }}
         />
         <div className='flex basis-1/3 flex-col gap-5'>
-          <ValueCard
+          <AboutCard
             imgCls='hidden'
             title='Dedicated Customer Support'
             description={`Superior product quality refers to the exceptional standard of a product's design, performance, and durability, surpassing the expectations and satisfaction of customers.`}
@@ -70,7 +73,7 @@ const Values = () => {
               y: -30,
             }}
           />
-          <ValueCard
+          <AboutCard
             imgCls='left-0 bottom-0 translate-y-1/2 -translate-x-2/3 rotate-0'
             title='Dedicated Customer Support'
             description={`Superior product quality refers to the exceptional standard of a product's design, performance, and durability, surpassing the expectations and satisfaction of customers.`}
@@ -86,4 +89,4 @@ const Values = () => {
   );
 };
 
-export default Values;
+export default About;

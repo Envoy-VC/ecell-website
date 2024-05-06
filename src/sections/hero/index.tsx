@@ -6,7 +6,7 @@ import Buildings from '~/assets/buildings.svg';
 
 const Hero = () => {
   return (
-    <section className='relative mt-28 h-full w-full' id='hero'>
+    <section className='relative h-full w-full' id='hero'>
       <div className='flex flex-col'>
         <h1 className='title-gradient px-4 py-12 text-[2rem] font-semibold leading-[1.3] sm:text-5xl md:text-6xl lg:text-7xl'>
           <span

@@ -31,7 +31,7 @@ const Contact = () => {
           variant='primary'
           className='z-[6] bg-background px-12 transition-all duration-500 ease-in'
         >
-          <Link href='/contact'>Contact Us</Link>
+          <Link href='mailto:ecellnita@gmail.com'>Contact Us</Link>
         </Button>
       </div>
     </section>

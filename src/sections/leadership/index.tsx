@@ -1,6 +1,10 @@
 import React from 'react';
 
+import { executives } from '~/lib/data';
+
 import { LeadershipCard } from '~/components';
+
+import TeamSelect from './TeamSelect';
 
 const Leadership = () => {
   return (
@@ -21,10 +25,11 @@ const Leadership = () => {
         </span>
       </h2>
       <div className='flex flex-col items-center gap-5 md:flex-row'>
-        <LeadershipCard />
-        <LeadershipCard />
-        <LeadershipCard />
+        {executives.map((executive) => (
+          <LeadershipCard key={executive.name} {...executive} />
+        ))}
       </div>
+      <TeamSelect />
     </section>
   );
 };

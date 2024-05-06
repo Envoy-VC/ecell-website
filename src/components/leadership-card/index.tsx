@@ -1,18 +1,44 @@
 import React from 'react';
 
-const LeadershipCard = () => {
+import Link from 'next/link';
+
+import { Instagram, Linkedin, Mail, Twitter } from 'lucide-react';
+import type { ExecutiveProps } from '~/types';
+
+const LeadershipCard = ({ name, image, position, socials }: ExecutiveProps) => {
+  const { name: socialName, link } = socials;
   return (
-    <div className='relative sm:h-[28rem] w-[20rem] h-[24rem] sm:w-[24rem] overflow-hidden rounded-[20px]'>
-      <img
-        src='https://framerusercontent.com/images/ypKVpsH8eytIFqYMqPCPcXsz5k.png'
-        alt='Image'
-        className='object-cover'
-      />
-      <div className='leadership-cover absolute bottom-0 z-[3] flex w-full flex-col px-8 py-4 text-white'>
-        <div className='text-lg'>Emma Stones</div>
-        <div className='text-sm text-white/70'>CEO and Co-founder</div>
+    <div className='relative h-[24rem] w-[20rem] overflow-hidden rounded-[20px] sm:h-[24rem] sm:w-[20rem]'>
+      <img src={image} alt={`${name} Profile Photo`} className='object-cover' />
+      <div className='leadership-cover absolute bottom-0 z-[3] flex w-full flex-row items-start justify-between px-8 py-4 text-white'>
+        <div className='flex flex-col'>
+          <div className='text-lg'>{name}</div>
+          <div className='text-sm text-white/70'>{position}</div>
+        </div>
+        <div className='text-white/85'>
+          {socialName === 'email' && (
+            <Link href={link}>
+              <Mail size={24} />
+            </Link>
+          )}
+          {socialName === 'twitter' && (
+            <Link href={link}>
+              <Twitter size={24} />
+            </Link>
+          )}
+          {socialName === 'instagram' && (
+            <Link href={link}>
+              <Instagram size={24} />
+            </Link>
+          )}
+          {socialName === 'linkedin' && (
+            <Link href={link}>
+              <Linkedin size={24} />
+            </Link>
+          )}
+        </div>
       </div>
-      <div className='leadership-cover absolute bottom-3 z-[2] w-full -rotate-[15deg] p-12'></div>
+      <div className='leadership-cover absolute bottom-3 z-[2] flex w-full -rotate-[15deg] items-start justify-end p-12'></div>
       <div className='leadership-cover absolute bottom-3 z-[1] w-full rotate-[15deg] p-12'></div>
     </div>
   );

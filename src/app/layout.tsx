@@ -1,6 +1,5 @@
 import localFont from 'next/font/local';
 
-import { Navbar } from '~/components';
 import { SmoothScrollProvider } from '~/providers';
 import '~/styles/globals.css';
 
@@ -23,10 +22,7 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <body className={`font-sans ${sfPro.variable}`}>
-        <SmoothScrollProvider>
-          <Navbar />
-          {children}
-        </SmoothScrollProvider>
+        <SmoothScrollProvider>{children}</SmoothScrollProvider>
       </body>
     </html>
   );

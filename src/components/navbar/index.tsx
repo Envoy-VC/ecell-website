@@ -7,7 +7,8 @@ import Link from 'next/link';
 
 import { AnimatePresence, type Variants, motion } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
-import StripsBackground from 'public/strips.svg';
+
+import StripsBackground from '~/assets/strips.svg';
 
 import Logo from '../Logo';
 import { Button } from '../ui/button';

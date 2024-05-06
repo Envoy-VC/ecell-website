@@ -13,6 +13,7 @@ const config = {
   importOrder: [
     '^react',
     '^next/(.*)$',
+    '^~/sections/(.*)$',
     '^~/lib/hooks/(.*)$',
     '^~/lib/helpers/(.*)$',
     '^~/lib/(.*)$',

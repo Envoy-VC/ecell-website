@@ -73,7 +73,25 @@
   body {
     @apply dark bg-background text-foreground;
   }
-  .title {
-    @apply bg-[linear-gradient(179deg,rgb(248,250,252)_0%,rgba(248,250,252,0.4)_100%)] text-transparent inline-block bg-clip-text;
+  .title-gradient {
+    @apply inline-block bg-[linear-gradient(179deg,rgb(248,250,252)_0%,rgba(248,250,252,0.4)_100%)] bg-clip-text text-transparent;
   }
+}
+
+.card-grad1 {
+  @apply absolute inset-0 z-[5] flex-none overflow-hidden opacity-[0.16] shadow-[inset_0_-40px_56px_-16px_#ffffff0f];
+  background: radial-gradient(
+    100% 100% at 100% 100%,
+    #7300e6 0%,
+    rgba(5, 4, 31, 0) 100%
+  );
+}
+
+.card-grad2 {
+  @apply absolute inset-0 z-[4] flex-none overflow-hidden opacity-[0.06] shadow-[inset_0_-40px_56px_-16px_#ffffff0f];
+  background: radial-gradient(
+    50% 100% at 50% 100%,
+    var(--token-5c86871d-e642-4c26-bc49-cf7bd6318a92, #ffffff) 0%,
+    rgba(5, 4, 31, 0) 100%
+  );
 }

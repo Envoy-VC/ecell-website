@@ -73,4 +73,7 @@
   body {
     @apply dark bg-background text-foreground;
   }
+  .title {
+    @apply bg-[linear-gradient(179deg,rgb(248,250,252)_0%,rgba(248,250,252,0.4)_100%)] text-transparent inline-block bg-clip-text;
+  }
 }

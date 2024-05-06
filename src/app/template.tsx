@@ -10,7 +10,6 @@ const variants: Variants = {
 export default function Template({ children }: { children: React.ReactNode }) {
   return (
     <motion.main
-      className='mt-28'
       variants={variants}
       initial='hidden'
       animate='enter'

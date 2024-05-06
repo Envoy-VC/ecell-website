@@ -23,13 +23,14 @@ const navLinks = [
     href: '/about',
   },
   {
+    label: 'Events',
+    href: '/events',
+  },
+  {
     label: 'Team',
     href: '/team',
   },
-  {
-    label: 'Blog',
-    href: '/blog',
-  },
+
   {
     label: 'Contact',
     href: '/contact',
@@ -56,7 +57,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className='fixed top-0  z-[2] w-full pt-4'>
+    <div className='fixed top-0 z-[2] w-full px-2 pt-5'>
       <div className='absolute left-1/2 top-0 mx-auto w-full max-w-screen-lg -translate-x-1/2'>
         <Image
           src={StripsBackground as unknown as string}
@@ -74,7 +75,7 @@ const Navbar = () => {
         className='top-0 mx-auto flex h-full w-full max-w-screen-lg flex-col rounded-2xl border border-[#151633] bg-[#cecefb0a] px-8 backdrop-blur-md'
       >
         <motion.div
-          className='flex w-full flex-row items-center justify-between'
+          className='flex w-full flex-row items-center justify-between py-2'
           layout='preserve-aspect'
         >
           <Logo size={24} fill='#000' className='' />

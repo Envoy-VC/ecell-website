@@ -22,7 +22,7 @@ const Home = () => {
           <Lights />
         </div>
       </div>
-      <div className='relative min-h-screen overflow-y-hidden pt-28 text-center sm:h-screen'>
+      <div className='relative min-h-screen overflow-y-hidden text-center sm:h-screen'>
         <div className='absolute top-0 overflow-y-hidden'>
           <Image
             src={CubesBackground as unknown as string}

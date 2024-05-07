@@ -2,6 +2,7 @@
 
 import React from 'react';
 
+import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 
 import { useScrollbar } from '@14islands/r3f-scroll-rig';
@@ -84,7 +85,18 @@ const Navbar = () => {
           className='flex w-full flex-row items-center justify-between py-2'
           layout='preserve-aspect'
         >
-          <Logo size={24} fill='#000' className='' />
+          <Logo
+            size={24}
+            fill='#000'
+            className='cursor-pointer'
+            onClick={() =>
+              onClick({
+                label: 'Home',
+                href: '/',
+              })
+            }
+          />
+
           <div className='hidden w-full max-w-sm flex-row items-center gap-4 md:flex'>
             {navLinks.map((link) => (
               <Button
@@ -97,7 +109,16 @@ const Navbar = () => {
               </Button>
             ))}
           </div>
-          <Button variant='primary' className='hidden sm:flex'>
+          <Button
+            variant='primary'
+            className='hidden sm:flex'
+            onClick={() =>
+              onClick({
+                label: 'About',
+                href: '#about',
+              })
+            }
+          >
             Get Started
           </Button>
           <Button

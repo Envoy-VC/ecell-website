@@ -1,9 +1,13 @@
 import React from 'react';
 
+import { EventsHeader } from '~/components';
+import { Initiatives } from '~/sections';
+
 const EventsPage = () => {
   return (
-    <div className='mx-auto max-w-screen-xl text-center text-4xl'>
-      Events Page
+    <div className='mt-28'>
+      <EventsHeader />
+      <Initiatives />
     </div>
   );
 };

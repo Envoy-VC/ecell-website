@@ -11,14 +11,29 @@ export const Teams = [
     name: 'Design Team',
     key: 'design',
   },
-
+  {
+    name: 'Content Team',
+    key: 'content',
+  },
   {
     name: 'Events Team',
     key: 'events',
   },
   {
-    name: 'Social Media Team',
+    name: 'Finance Team',
+    key: 'finance',
+  },
+  {
+    name: 'Social Media and PR Team',
     key: 'social-media',
+  },
+  {
+    name: 'Startup and Development',
+    key: 'startup',
+  },
+  {
+    name: 'Alumni Affairs',
+    key: 'alumni',
   },
 ] as const;
 

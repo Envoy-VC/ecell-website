@@ -2,35 +2,22 @@
 
 import React from 'react';
 
+import Image from 'next/image';
 import Link from 'next/link';
 
 import { useTeamStore } from '~/lib/stores';
 import { cn } from '~/lib/utils';
 
-import { type Variants, motion } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { Instagram, Linkedin, Mail, Twitter } from 'lucide-react';
 import { Teams } from '~/types';
 
 const TeamSelect = () => {
   const { activeTeam, setActiveTeam, members } = useTeamStore();
 
-  const cardVariants: Variants = {
-    initial: {
-      x: 0,
-      opacity: 0,
-    },
-    animate: {
-      x: 0,
-      opacity: 1,
-    },
-    exit: {
-      x: 20,
-      opacity: 0,
-    },
-  };
   return (
     <div className='mx-auto my-6 flex w-full max-w-screen-xl flex-col'>
-      <div className='hide-scrollbar mx-auto flex w-full max-w-xs flex-row items-center overflow-x-scroll rounded-full p-1 shadow-sm sm:max-w-sm md:max-w-md lg:max-w-lg'>
+      <div className='border hide-scrollbar mx-auto flex w-full max-w-xs flex-row items-center overflow-x-scroll rounded-full p-1 shadow-sm sm:max-w-sm md:max-w-md lg:max-w-lg'>
         {Teams.map((team) => {
           return (
             <div className='relative' key={team.key}>
@@ -54,25 +41,27 @@ const TeamSelect = () => {
         })}
       </div>
       <motion.div
-        className='flex flex-row flex-wrap items-center justify-center gap-8 py-16'
+        className='flex flex-row flex-wrap items-center justify-center gap-4 py-16 sm:gap-8'
         layout
       >
-        {members.map((member, index) => {
+        {members.map((member) => {
           const {
             name,
             image,
             position,
-            team,
+
             socials: { name: socialName, link },
           } = member;
           return (
             <motion.div
               layout
-              key={`${name}-${position}-${index}-${team}`}
+              key={image}
               className='relative h-[18rem] w-[14rem] overflow-hidden rounded-2xl'
             >
-              <img
-                src={image}
+              <Image
+                src={`/photos/members/${image}`}
+                width={320}
+                height={480}
                 className='h-full w-full rounded-2xl object-cover'
                 alt={`${name} Profile Photo`}
               />

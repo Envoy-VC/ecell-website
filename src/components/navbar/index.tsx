@@ -79,7 +79,7 @@ const Navbar = () => {
       <motion.div
         layout='size'
         layoutId='navbar'
-        className='top-0 mx-auto flex h-full w-full max-w-screen-lg flex-col rounded-2xl border border-[#151633] bg-[#cecefb0a] px-8 backdrop-blur-md'
+        className='top-0 mx-auto flex h-full w-full max-w-screen-lg flex-col rounded-2xl border border-[#151633] bg-[#02031d57] px-8 backdrop-blur-md'
       >
         <motion.div
           className='flex w-full flex-row items-center justify-between py-2'

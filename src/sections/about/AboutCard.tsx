@@ -114,7 +114,7 @@ export const AboutCardLarge = ({
         once: true,
       }}
       className={cn(
-        'relative flex min-h-full flex-col overflow-hidden rounded-3xl border border-[#312B4C] p-5',
+        'relative flex min-h-full basis-1/3 flex-col overflow-hidden rounded-3xl border border-[#312B4C] p-5',
         className
       )}
       {...props}
